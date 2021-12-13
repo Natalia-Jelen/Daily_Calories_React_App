@@ -21,3 +21,4 @@ namespace WebAppReact
                 .UseStartup<Startup>();
     }
 }
+
