@@ -89,4 +89,388 @@ do usuwania elementów z listy danego rodzaju typu dań.
 * Funkcja renderDailyProducts - odpowiedzialna za aktualizowanie elementów
 formularza na podstawie stanu komponentu.
 
+# Web App React API
+Demo API with Swagger
+
+## Version: v1
+
+### /api/Activities
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### POST
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/Activities/{id}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### PUT
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### DELETE
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /_configuration/{clientId}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| clientId | path |  | Yes | string |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/Products
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### POST
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/Products/{id}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### PUT
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### DELETE
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/Sexs
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### POST
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/Sexs/{id}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### PUT
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### DELETE
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UsersDatas
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### POST
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UsersDatas/{applicationUserId}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| applicationUserId | path |  | Yes | string |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UsersDatas/{id}
+
+#### PUT
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### DELETE
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UserStats
+
+#### GET
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### POST
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UserStats/{applicationUserId}
+
+#### GET
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| applicationUserId | path |  | Yes | string |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### /api/UserStats/{id}
+
+#### PUT
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+#### DELETE
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| id | path |  | Yes | integer |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+
+### Models
+
+#### Activities
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| activityId | integer |  | No |
+| pal | double |  | No |
+| description | string |  | No |
+| usersData | [  ] |  | No |
+
+#### ApplicationUser
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string |  | No |
+| userName | string |  | No |
+| normalizedUserName | string |  | No |
+| email | string |  | No |
+| normalizedEmail | string |  | No |
+| emailConfirmed | boolean |  | No |
+| passwordHash | string |  | No |
+| securityStamp | string |  | No |
+| concurrencyStamp | string |  | No |
+| phoneNumber | string |  | No |
+| phoneNumberConfirmed | boolean |  | No |
+| twoFactorEnabled | boolean |  | No |
+| lockoutEnd | dateTime |  | No |
+| lockoutEnabled | boolean |  | No |
+| accessFailedCount | integer |  | No |
+| usersData |  |  | No |
+
+#### Products
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| productId | integer |  | No |
+| description | string |  | No |
+| caloriesAmount | string |  | No |
+
+#### Sexs
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| sexId | integer |  | No |
+| abbreviation | string |  | No |
+| description | string |  | No |
+| usersData | [  ] |  | No |
+
+#### UsersData
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| userDataId | integer |  | No |
+| name | string |  | No |
+| height | double |  | No |
+| weight | double |  | No |
+| dateOfBirth | dateTime |  | No |
+| sexId | integer |  | No |
+| activityId | integer |  | No |
+| goal | double |  | No |
+| activity |  |  | No |
+| sex |  |  | No |
+| applicationUserId | string |  | No |
+| applicationUser |  |  | No |
+
+#### UserStats
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| userStatsId | integer |  | No |
+| registerDate | dateTime |  | No |
+| weight | double |  | No |
+| goal | double |  | No |
+| applicationUserId | string |  | No |
 
