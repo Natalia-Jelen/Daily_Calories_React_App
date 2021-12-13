@@ -23,6 +23,18 @@ userStatsId: 1
 weight: 1
 }, ...]
  
+ POST:
+ Request:
+ url: /api/UserStats
+ Response:
+ [{
+ applicationUserId: "id"
+goal: 1
+registerDate: "time stamp"
+userStatsId: 1
+weight: 1
+ }, ...]
+ 
 ## Front-end
   Warstwa front-end aplikacji stworzony jest w technologii JavaScript z użyciem biblioteki React i szablonu create-react-app. Poszczególne elementy interfejsu użytkownika są umieszczone w poszczególnych komponentach. Poszczególne komponenty podczas ładowania komunikują się z wcześniej utworzonymi metodami API po stronie back-endu, dzięki czemu mogą wykonywać podstawowe operacje (typu odczyt i zapis) na danych z bazy. Dane w obrębie komponentu zapisywane są w jego stanie i przetwarzane przy użyciu odpowiednich eventów na przyciskach. Dodatkowo z szablonu aplikacji Visual Studio wygenerowane zostały komponenty odpowiedzialne za funkcjonalności autentykacji i autoryzacji.
 
