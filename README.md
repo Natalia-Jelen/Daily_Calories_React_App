@@ -1,12 +1,8 @@
  ## Uruchomienie
  W celu uruchomienia aplikacji należy w projekcie otworzyć "appsettings.json", a następnie w zmiennej "DefaultConnection" zmienić "Id" na własny Login oraz "Password" na własne hasło do bazy. Tak samo należy postąpić w "appsettings.Development.json". W folderze "Baza danych-skrypt" znajduje się skrypt bazy danych, który należy uruchomić w SQL Server Management Studio.
 
-## Cel 
-  Celem projektu jest stworzenie aplikacji do liczenia spożytych kalorii używając interfejsu API (ang. Application Programming Interface) za pomocą ASP.NET Core 3, wywoływanego przy użyciu języka JavaScript - wykorzystując bibliotekę React.
-Założeniem projektu jest umożliwienie użytkownikowi po zalogowaniu na wprowadzenie swoich danych takich jak wzrost, waga, wiek, aktywność, które pozwalają na wyznaczenie celu kalorycznego na dzień. Następnie użytkownik ma możliwość wprowadzenia produktów, które spożył w ciągu dnia. Kalorie tych produktów zostaną automatycznie odjęte od celu kalorycznego pozwalając użytkownikowi na łatwiejsze zauważenie, tego ile dane produkty mają kalorii oraz czy nie jest przekraczane dzienne zapotrzebowanie kaloryczne. Aplikacja powinna pomagać w obserwacji ilości spożywanych kalorii w ciągu dnia oraz tego jak to oraz poziom aktywności wpływa w dłuższym okresie czasu na wagę użytkownika. Po wprowadzeniu i aktualizowaniu danych użytkownika aplikacja umożliwia wizualne przedstawienie na wykresie dwóch parametrów: wyznaczonego celu kalorycznego na dzień oraz wagi, co pozwala użytkownikowi na obserwacje tego jak te parametry się u niego zmieniają w czasie.
-
 ## Back-end
-  Warstwa back-end aplikacji stworzona jest w technologii C# z użyciem szablonu API + React.js + uwierzytelnianie. Back-end składa się z wielu klas pogrupowanych według funkcjonalności, takich jak modele, kontekst, kontrolery oraz migracje. Modele to zestaw klas, które reprezentują dane, którymi zarządza aplikacja. W modelach opisana jest struktura danych, które docelowo przechowuje się w bazie. Kontekst bazy danych jest główną klasą, która służy do koordynowania funkcji modelu danych, definiuje połączenia między tabelami, a także typy czy zależności danych atrybutów w bazie wykorzystując do tego wcześniej stworzone modele. Za jego pomocą są automatycznie generowane pliki migracji, dzięki którym przy każdym uruchamianiu projektu i aktualizowaniu bazy danych, w każdym środowisku są w stanie stworzyć tę samą strukturę bazy. Dzięki czemu nie trzeba jej przechowywać. Automatycznie generowane kontrolery na podstawie modelu oraz kontekstu służą do tworzenia metod API, które pozwalają na odczyt danych oraz operacje w bazie danych.
+  Warstwa back-end aplikacji stworzona jest w technologii C# z użyciem szablonu API + React.js + uwierzytelnianie. Back-end składa się z wielu klas pogrupowanych według funkcjonalności, takich jak modele, kontekst, kontrolery oraz migracje. Automatycznie generowane kontrolery na podstawie modelu oraz kontekstu służą do tworzenia metod API, które pozwalają na odczyt danych oraz operacje w bazie danych.
   
 Automatycznie wygenerowane w kontrolerach dostępne metody API:
 * metoda GET - służy do pobierania danych z bazy,
@@ -14,5 +10,45 @@ Automatycznie wygenerowane w kontrolerach dostępne metody API:
 * metoda POST - służy do przekazywania danych do bazy,
 * metoda DELETE - służy do usuwania danych z bazy
 
+GET:
+Request:
+url: /api/UserStats/<user id>
+
+Response:
+[{
+applicationUserId: "id"
+goal: 1
+registerDate: "time stamp"
+userStatsId: 1
+weight: 1
+}, ...]
+ 
 ## Front-end
   Warstwa front-end aplikacji stworzony jest w technologii JavaScript z użyciem biblioteki React i szablonu create-react-app. Poszczególne elementy interfejsu użytkownika są umieszczone w poszczególnych komponentach. Poszczególne komponenty podczas ładowania komunikują się z wcześniej utworzonymi metodami API po stronie back-endu, dzięki czemu mogą wykonywać podstawowe operacje (typu odczyt i zapis) na danych z bazy. Dane w obrębie komponentu zapisywane są w jego stanie i przetwarzane przy użyciu odpowiednich eventów na przyciskach. Dodatkowo z szablonu aplikacji Visual Studio wygenerowane zostały komponenty odpowiedzialne za funkcjonalności autentykacji i autoryzacji.
+
+## Wykorzystywane komponenty:
+### UserData
+* Funkcja getApplicationUserId - odpowiada za zwracanie identyfikatora użytkownika który jest zalogowany.
+* Funkcja getUserStats - pobiera Id użytkownika, który jest zalogowany odwołując się do metody getApplicationUserId, następnie pobiera i zapisuje
+dane w stanie komponentu.
+* Funkcja handleSubmit - sprawdza czy dane użytkownika znajdują sie juz w
+bazie, jeżeli się znajdują to używa funkcji updateNewStats do aktualizacji, w
+przeciwnym razie używa addNewUserData do dodania danych użytkownika.
+* Funkcja getPPMValue - służy do obliczenia PPM w zależności od wybranej
+płci użytkownika i zwraca jego wartość.
+* Funkcja renderUserDataForm - zwraca definicje budowy formularza, część
+wizualną budowy komponentu.
+* Funkcje getActivities, getSexs, getUsersDatas, getProducts służą do pobierania danych z odpowiednich tabel.
+* Funkcje handleNameChange, handleHeightChange, handleWeightChang, handleDateOfBirthChange, handleSexChange, handleActivityChange służą do
+zmiany stanu komponentu na podstawie zmian wartości pół formularza.
+### ProductItem
+* Funkcja getProducts - zwraca listę produktów z bazy.
+
+### DailyProducts
+* Funkcje removeBreakfastItem, removeLunchItem, removeDinnerItem służą
+do usuwania elementów z listy danego rodzaju typu dań.
+* Funkcje onBreakfastItemChange, onLunchItemChange, onDinnerItemChange służą do aktualizacji listy produktów w danym typie dania.
+* Funkcja renderDailyProducts - odpowiedzialna za aktualizowanie elementów
+formularza na podstawie stanu komponentu.
+
+
