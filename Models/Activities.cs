@@ -17,3 +17,4 @@ namespace WebAppReact.Models
         public virtual ICollection<UsersData> UsersData { get; set; }
     }
 }
+
