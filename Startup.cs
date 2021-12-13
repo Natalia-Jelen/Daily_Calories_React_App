@@ -28,7 +28,7 @@ namespace WebAppReact
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));//definicja po³¹czenia z baz¹, szczegó³y pobierane z appsettings
+                    Configuration.GetConnectionString("DefaultConnection")));//definicja poÂ³Â¹czenia z bazÂ¹, szczegÃ³Â³y pobierane z appsettings
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -93,3 +93,4 @@ namespace WebAppReact
         }
     }
 }
+
