@@ -23,6 +23,32 @@ userStatsId: 1
 weight: 1
 }, ...]
  
+ Request:
+ url: /api/Products
+ 
+ Response:
+ [{productId: 1, 
+ description: "string", 
+ caloriesAmount: "1"
+ },…]
+ 
+ Request:
+ url: /api/Sexs
+ Response:
+ [{sexId: 1, 
+ abbreviation: "char", 
+ description: "string", 
+ usersData: []
+ },…]
+ 
+ Request:
+ url: /api/Activities
+ Response:
+ [{activityId: 1, 
+ pal: 1, 
+ description: "string", 
+ usersData: []},…]
+ 
  POST:
  Request:
  url: /api/UserStats
